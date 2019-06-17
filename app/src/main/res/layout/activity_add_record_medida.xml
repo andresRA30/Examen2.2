@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddRecordActivityMedida"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agregar nueva Medida"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/fechaN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Fecha"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/grasaN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Grasa"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/masaN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Masa"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/pesoN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Peso"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/edadN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Edad"
+        android:inputType="number" />
+
+
+
+    <Button
+        android:id="@+id/addNewUserButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agregar Medidas a este estudiante" />
+
+
+</LinearLayout>

@@ -4,6 +4,7 @@ package com.example.contacts.listedit;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
@@ -30,14 +31,8 @@ public class DeleteConfirmFragment extends DialogFragment {
             }
         });
 
-        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                mListener.setConfirm(false, personId);
-            }
-        });
 
-        builder.setNegativeButton("Vista 3", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 mListener.setConfirm(false, personId);
