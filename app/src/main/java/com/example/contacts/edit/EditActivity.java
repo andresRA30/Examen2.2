@@ -1,11 +1,15 @@
 package com.example.contacts.edit;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import java.util.Date;
 
@@ -32,7 +36,8 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
     private TextInputLayout mEmailInputLayout;
     private TextInputLayout mBirthdayInputLayout;
     private TextInputLayout mFotoTextInputLayout;
-
+    private ImageView imageView;
+    private static final int REQUEST_IMAGE_CAPTUE = 101;
     private FloatingActionButton mFab;
 
     private Person person;
@@ -51,7 +56,20 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
 
         initViews();
     }
-
+    public void takePicture(View view) {
+        Intent imageTakeIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if(imageTakeIntent.resolveActivity(getPackageManager()) !=null) {
+            startActivityForResult(imageTakeIntent, REQUEST_IMAGE_CAPTUE);
+        }
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == REQUEST_IMAGE_CAPTUE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageView.setImageBitmap(imageBitmap);
+        }
+    }
     @Override
     protected void onStart() {
         super.onStart();
