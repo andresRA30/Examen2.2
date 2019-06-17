@@ -17,25 +17,25 @@ public class Person {
     @PrimaryKey(autoGenerate = true)
     public long id;
     public String name;
-    public String address;
+    public String edad;
     public Date birthday;
-    public String phone;
+    public String foto;
     public String email;
 
     @Ignore
     public Person() {
         this.name = "";
-        this.address = "";
+        this.edad = "";
         this.birthday = null;
-        this.phone = "";
+        this.foto = "";
         this.email = "";
     }
 
-    public Person(String name, String address, Date birthday, String phone, String email) {
+    public Person(String name, String edad, Date birthday, String foto, String email) {
         this.name = name;
-        this.address = address;
+        this.edad = edad;
         this.birthday = birthday;
-        this.phone = phone;
+        this.foto = foto;
         this.email = email;
     }
 }

@@ -36,6 +36,14 @@ public class DeleteConfirmFragment extends DialogFragment {
                 mListener.setConfirm(false, personId);
             }
         });
+
+        builder.setNegativeButton("Vista 3", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                mListener.setConfirm(false, personId);
+            }
+        });
+
         return builder.create();
     }
 

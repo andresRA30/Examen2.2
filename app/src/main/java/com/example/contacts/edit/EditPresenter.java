@@ -35,12 +35,12 @@ public class EditPresenter implements EditContract.Presenter {
             mView.showErrorMessage(Constants.FIELD_NAME);
             return false;
         }
-        if (person.address.isEmpty()) {
-            mView.showErrorMessage(Constants.FIELD_ADDRESS);
+        if (person.edad.isEmpty()) {
+            mView.showErrorMessage(Constants.FIELD_edad);
             return false;
         }
-        if (person.phone.isEmpty() || !Util.isValidPhone(person.phone)) {
-            mView.showErrorMessage(Constants.FIELD_PHONE);
+        if (person.foto.isEmpty() || !Util.isValidfoto(person.foto)) {
+            mView.showErrorMessage(Constants.FIELD_foto);
             return false;
         }
         if (person.email.isEmpty() || !Util.isValidEmail(person.email)) {

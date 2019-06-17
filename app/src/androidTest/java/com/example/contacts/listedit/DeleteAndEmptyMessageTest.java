@@ -54,19 +54,19 @@ public class DeleteAndEmptyMessageTest {
 
         ViewInteraction appCompatEditText = onView(
                 withId(R.id.nameEditText));
-        appCompatEditText.perform(scrollTo(), replaceText("Daniel Alvarez"), closeSoftKeyboard());
+        appCompatEditText.perform(scrollTo(), replaceText("Jose Lenin"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText2 = onView(
-                withId(R.id.addressEditText));
-        appCompatEditText2.perform(scrollTo(), replaceText("La Paz, Bolivia"), closeSoftKeyboard());
+                withId(R.id.edadEditText));
+        appCompatEditText2.perform(scrollTo(), replaceText("Liberia, Costa Rica"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText3 = onView(
-                withId(R.id.phoneEditText));
+                withId(R.id.fotoEditText));
         appCompatEditText3.perform(scrollTo(), replaceText("591 77242424"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText4 = onView(
                 withId(R.id.emailEditText));
-        appCompatEditText4.perform(scrollTo(), replaceText("daniel@alvarez.tech"), closeSoftKeyboard());
+        appCompatEditText4.perform(scrollTo(), replaceText("joseleninu@gmail.tech"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText5 = onView(
                 withId(R.id.birthdayEditText));

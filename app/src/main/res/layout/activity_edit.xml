@@ -33,15 +33,15 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/addressTextInputLayout"
+                android:id="@+id/edadTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/addressEditText"
+                    android:id="@+id/edadEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/address"
+                    android:hint="edad"
                     android:inputType="textCapWords|textNoSuggestions"
                     android:lines="2"
                     android:minLines="2" />
@@ -49,16 +49,16 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/phoneTextInputLayout"
+                android:id="@+id/fotoTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/phoneEditText"
+                    android:id="@+id/fotoEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/phone"
-                    android:inputType="phone|textNoSuggestions" />
+                    android:hint="foto"
+                    android:inputType="phone|textNoSuggestions" /><!-- falta -->
 
             </android.support.design.widget.TextInputLayout>
 
@@ -72,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/email"
-                    android:inputType="textEmailAddress|textNoSuggestions" />
+                    android:inputType="textEmailAddress|textNoSuggestions" /><!-- falta -->
 
             </android.support.design.widget.TextInputLayout>
 

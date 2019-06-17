@@ -22,16 +22,16 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
     private EditContract.Presenter mPresenter;
 
     private EditText mNameEditText;
-    private EditText mAddressEditText;
+    private EditText mEdadEditText;
     private EditText mEmailEditText;
     private EditText mBirthdayEditText;
-    private EditText mPhoneEditText;
+    private EditText mFotoEditText;
 
     private TextInputLayout mNameTextInputLayout;
-    private TextInputLayout mAddressInputLayout;
+    private TextInputLayout mEdadInputLayout;
     private TextInputLayout mEmailInputLayout;
     private TextInputLayout mBirthdayInputLayout;
-    private TextInputLayout mPhoneTextInputLayout;
+    private TextInputLayout mFotoTextInputLayout;
 
     private FloatingActionButton mFab;
 
@@ -69,16 +69,16 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
 
     private void initViews() {
         mNameEditText = (EditText) findViewById(R.id.nameEditText);
-        mAddressEditText = (EditText) findViewById(R.id.addressEditText);
+        mEdadEditText = (EditText) findViewById(R.id.edadEditText);
         mEmailEditText = (EditText) findViewById(R.id.emailEditText);
         mBirthdayEditText = (EditText) findViewById(R.id.birthdayEditText);
-        mPhoneEditText = (EditText) findViewById(R.id.phoneEditText);
+        mFotoEditText = (EditText) findViewById(R.id.fotoEditText);
 
         mNameTextInputLayout = (TextInputLayout) findViewById(R.id.nameTextInputLayout);
-        mAddressInputLayout = (TextInputLayout) findViewById(R.id.addressTextInputLayout);
+        mEdadInputLayout = (TextInputLayout) findViewById(R.id.edadTextInputLayout);
         mEmailInputLayout = (TextInputLayout) findViewById(R.id.emailTextInputLayout);
         mBirthdayInputLayout = (TextInputLayout) findViewById(R.id.birthdayTextInputLayout);
-        mPhoneTextInputLayout = (TextInputLayout) findViewById(R.id.phoneTextInputLayout);
+        mFotoTextInputLayout = (TextInputLayout) findViewById(R.id.fotoTextInputLayout);
 
         mBirthdayEditText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,9 +94,9 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
             public void onClick(View v) {
 
                 person.name = mNameEditText.getText().toString();
-                person.address = mAddressEditText.getText().toString();
+                person.edad = mEdadEditText.getText().toString();
                 person.email = mEmailEditText.getText().toString();
-                person.phone = mPhoneEditText.getText().toString();
+                person.foto = mFotoEditText.getText().toString();
 
                 boolean valid = mPresenter.validate(person);
 
@@ -122,10 +122,10 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
             mNameTextInputLayout.setError(getString(R.string.invalid_name));
         } else if (field == Constants.FIELD_EMAIL) {
             mEmailInputLayout.setError(getString(R.string.invalid_email));
-        } else if (field == Constants.FIELD_PHONE) {
-            mPhoneTextInputLayout.setError(getString(R.string.invalid_phone));
-        } else if (field == Constants.FIELD_ADDRESS) {
-            mAddressInputLayout.setError(getString(R.string.invalid_address));
+        } else if (field == Constants.FIELD_foto) {
+            mFotoTextInputLayout.setError(getString(R.string.invalid_foto));
+        } else if (field == Constants.FIELD_edad) {
+            mEdadInputLayout.setError(getString(R.string.invalid_edad));
         } else if (field == Constants.FIELD_BIRTHDAY) {
             mBirthdayInputLayout.setError(getString(R.string.invalid_birthday));
         }
@@ -135,8 +135,8 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
     public void clearPreErrors() {
         mNameTextInputLayout.setErrorEnabled(false);
         mEmailInputLayout.setErrorEnabled(false);
-        mPhoneTextInputLayout.setErrorEnabled(false);
-        mAddressInputLayout.setErrorEnabled(false);
+        mFotoTextInputLayout.setErrorEnabled(false);
+        mEdadInputLayout.setErrorEnabled(false);
         mBirthdayInputLayout.setErrorEnabled(false);
     }
 
@@ -155,10 +155,10 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
     public void populate(Person person) {
         this.person = person;
         mNameEditText.setText(person.name);
-        mAddressEditText.setText(person.address);
+        mEdadEditText.setText(person.edad);
         mEmailEditText.setText(person.email);
         mBirthdayEditText.setText(Util.format(person.birthday));
-        mPhoneEditText.setText(person.phone);
+        mFotoEditText.setText(person.foto);
     }
 
     @Override

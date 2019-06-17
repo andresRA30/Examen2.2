@@ -46,9 +46,9 @@ public class DatabaseTest {
         List<Person> persons = mPersonDao.getAllChannels();
         assertThat(persons.size(), equalTo(0));
 
-        Person person = addPerson(mDb, 1, "Name 1", "Address 1", "111111", Calendar.getInstance().getTime());
-        addPerson(mDb, 2, "Name 2", "Address 2", "22222", Calendar.getInstance().getTime());
-        addPerson(mDb, 3, "Name 3", "Address 3", "33333", Calendar.getInstance().getTime());
+        Person person = addPerson(mDb, 1, "Name 1", "edad 1", "111111", Calendar.getInstance().getTime());
+        addPerson(mDb, 2, "Name 2", "edad 2", "22222", Calendar.getInstance().getTime());
+        addPerson(mDb, 3, "Name 3", "edad 3", "33333", Calendar.getInstance().getTime());
 
         persons = mPersonDao.getAllChannels();
         assertThat(persons.size(), equalTo(3));
@@ -60,12 +60,12 @@ public class DatabaseTest {
     }
 
     private static Person addPerson(final AppDatabase db, final long id, final String name,
-                                    final String address, final String phone, final Date birthday) {
+                                    final String edad, final String foto, final Date birthday) {
         Person person = new Person();
         person.id = id;
         person.name = name;
-        person.address = address;
-        person.phone = phone;
+        person.edad = edad;
+        person.foto = foto;
         person.birthday = birthday;
         db.personModel().insertPerson(person);
         return person;

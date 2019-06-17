@@ -49,19 +49,19 @@ public class AddPersonTest {
 
         ViewInteraction appCompatEditText = onView(
                 withId(R.id.nameEditText));
-        appCompatEditText.perform(scrollTo(), replaceText("Daniel Alvarez"), closeSoftKeyboard());
+        appCompatEditText.perform(scrollTo(), replaceText("Jose Lenin"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText2 = onView(
-                withId(R.id.addressEditText));
-        appCompatEditText2.perform(scrollTo(), replaceText("La Paz, Bolivia"), closeSoftKeyboard());
+                withId(R.id.edadEditText));
+        appCompatEditText2.perform(scrollTo(), replaceText("Liberia, Costa rica"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText3 = onView(
-                withId(R.id.phoneEditText));
+                withId(R.id.fotoEditText));
         appCompatEditText3.perform(scrollTo(), replaceText("591 77242424"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText4 = onView(
                 withId(R.id.emailEditText));
-        appCompatEditText4.perform(scrollTo(), replaceText("daniel@alvarez.tech"), closeSoftKeyboard());
+        appCompatEditText4.perform(scrollTo(), replaceText("joseleninu@gmail.tech"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText5 = onView(
                 withId(R.id.birthdayEditText));
@@ -110,10 +110,10 @@ public class AddPersonTest {
 
         onView(withId(R.id.list)).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
 
-        onView(withId(R.id.nameEditText)).check(matches(withText("Daniel Alvarez")));
-        onView(withId(R.id.addressEditText)).check(matches(withText("La Paz, Bolivia")));
-        onView(withId(R.id.phoneEditText)).check(matches(withText("591 77242424")));
-        onView(withId(R.id.emailEditText)).check(matches(withText("daniel@alvarez.tech")));
+        onView(withId(R.id.nameEditText)).check(matches(withText("Jose Lenin")));
+        onView(withId(R.id.edadEditText)).check(matches(withText("Liberia, Costa rica")));
+        onView(withId(R.id.fotoEditText)).check(matches(withText("591 77242424")));
+        onView(withId(R.id.emailEditText)).check(matches(withText("joseleninu@gmail.tech")));
     }
 
     private static Matcher<View> childAtPosition(

@@ -36,9 +36,9 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.nameTextView.setText(mValues.get(position).name);
-        holder.phoneTextView.setText(mValues.get(position).phone);
+        holder.fotoTextView.setText(mValues.get(position).foto);
 
-        holder.addressTextView.setText(holder.mItem.address);
+        holder.edadTextView.setText(holder.mItem.edad);
         holder.emailTextView.setText(holder.mItem.email);
         holder.birthdayTextView.setText(Util.formatMin(holder.mItem.birthday));
 
@@ -71,20 +71,20 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public final TextView nameTextView;
-        public final TextView phoneTextView;
+        public final TextView fotoTextView;
         public final TextView emailTextView;
         public final TextView birthdayTextView;
-        public final TextView addressTextView;
+        public final TextView edadTextView;
         public Person mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
             nameTextView = (TextView) view.findViewById(R.id.nameTextView);
-            phoneTextView = (TextView) view.findViewById(R.id.phoneTextView);
+            fotoTextView = (TextView) view.findViewById(R.id.fotoTextView);
             emailTextView = (TextView) view.findViewById(R.id.emailTextView);
             birthdayTextView = (TextView) view.findViewById(R.id.birthdayTextView);
-            addressTextView = (TextView) view.findViewById(R.id.addressTextView);
+            edadTextView = (TextView) view.findViewById(R.id.edadTextView);
         }
     }
 

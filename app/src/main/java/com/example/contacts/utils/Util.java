@@ -13,11 +13,11 @@ public class Util {
         Pattern patron = Pattern.compile("^[a-zA-Z ]+$");
         return patron.matcher(name).matches();
     }
-
-    public static boolean isValidPhone(String phone) {
-        return Patterns.PHONE.matcher(phone).matches();
+    //FALTA
+    public static boolean isValidfoto(String foto) {
+        return Patterns.PHONE.matcher(foto).matches();
     }
-
+    //FALTA
     public static boolean isValidEmail(String email) {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
