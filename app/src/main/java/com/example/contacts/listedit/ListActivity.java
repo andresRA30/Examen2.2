@@ -1,6 +1,5 @@
 package com.example.contacts.listedit;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,13 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.List;
+
 import com.example.contacts.R;
-import com.example.contacts.data.db.AppDataBase;
+import com.example.contacts.data.db.AppDatabase;
 import com.example.contacts.data.db.entity.Person;
 import com.example.contacts.edit.EditActivity;
 import com.example.contacts.utils.Constants;
 
 import java.util.List;
+
 
 public class ListActivity extends AppCompatActivity implements ListContract.View, ListContract.OnItemClickListener, ListContract.DeleteListener {
 

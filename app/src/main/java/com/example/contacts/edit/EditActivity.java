@@ -1,6 +1,5 @@
 package com.example.contacts.edit;
 
-
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
@@ -8,14 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
-
 import java.util.Date;
 
-
 import com.example.contacts.R;
+import com.example.contacts.data.db.AppDatabase;
 import com.example.contacts.data.db.entity.Person;
 import com.example.contacts.utils.Constants;
-import com.example.contacts.data.db.AppDataBase;
 import com.example.contacts.utils.Util;
 
 

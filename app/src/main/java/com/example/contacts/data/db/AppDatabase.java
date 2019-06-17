@@ -1,18 +1,16 @@
 package com.example.contacts.data.db;
 
-
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import com.example.contacts.data.db.dao.PersonDao;
 import com.example.contacts.data.db.entity.Person;
+import com.example.contacts.data.db.dao.PersonDao;
 
 
 @Database(entities = {Person.class}, version = 1)
-public abstract class AppDataBase extends RoomDatabase {
-
+public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;
 
@@ -39,8 +37,5 @@ public abstract class AppDataBase extends RoomDatabase {
     public static void destroyInstance() {
         INSTANCE = null;
     }
-
-
-
 
 }

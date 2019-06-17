@@ -1,6 +1,5 @@
 package com.example.contacts.utils;
-
-
+// validaciones de los campos
 import android.util.Patterns;
 
 import java.text.SimpleDateFormat;

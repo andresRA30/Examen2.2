@@ -1,17 +1,46 @@
 package com.example.contacts;
 
+
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
-import static org.junit.Assert.assertEquals;
+import com.example.contacts.edit.EditContract;
+import com.example.contacts.edit.EditPresenter;
+import com.example.contacts.listedit.ListContract;
+import com.example.contacts.listedit.ListPresenter;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
+import static org.mockito.Mockito.verify;
+
+
 public class ListPresenterTest {
+    @Mock
+    private ListContract.View mListView;
+
+    @Mock
+    private EditContract.View mEditView;
+
+    private ListPresenter mListPresenter;
+
+    private EditPresenter mEditPresenter;
+
+    @Before
+    public void setupMocksAndView() {
+        MockitoAnnotations.initMocks(this);
+    }
+
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void createPresenter_setsThePresenterToView_list() {
+        mListPresenter = new ListPresenter(mListView, null);
+
+        verify(mListView).setPresenter(mListPresenter);
+    }
+
+    @Test
+    public void createPresenter_setsThePresenterToView_edit() {
+        mEditPresenter = new EditPresenter(mEditView, null);
+
+        verify(mEditView).setPresenter(mEditPresenter);
     }
 }

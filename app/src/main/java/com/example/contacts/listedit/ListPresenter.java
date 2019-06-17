@@ -1,6 +1,5 @@
 package com.example.contacts.listedit;
 
-
 import android.arch.lifecycle.Observer;
 import android.support.annotation.Nullable;
 
@@ -9,7 +8,6 @@ import java.util.List;
 import com.example.contacts.data.db.dao.PersonDao;
 import com.example.contacts.data.db.entity.Person;
 
-import java.util.List;
 
 public class ListPresenter implements ListContract.Presenter {
 
