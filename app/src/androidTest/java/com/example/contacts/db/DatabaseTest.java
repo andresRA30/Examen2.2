@@ -17,7 +17,9 @@ import java.util.Date;
 import java.util.List;
 
 import com.example.contacts.data.db.AppDatabase;
+import com.example.contacts.data.db.dao.MedidaDao;
 import com.example.contacts.data.db.dao.PersonDao;
+import com.example.contacts.data.db.entity.Medida;
 import com.example.contacts.data.db.entity.Person;
 
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -29,6 +31,7 @@ public class DatabaseTest {
 
 
     private PersonDao mPersonDao;
+    private MedidaDao mMedidaDao;
     private AppDatabase mDb;
 
     @Before
@@ -36,13 +39,14 @@ public class DatabaseTest {
         Context context = InstrumentationRegistry.getTargetContext();
         mDb = Room.inMemoryDatabaseBuilder(context, AppDatabase.class).build();
         mPersonDao = mDb.personModel();
+mMedidaDao = mDb.medidaModel();
     }
 
     @Test
     public void writeUserAndReadInList() throws Exception {
 
         mDb.personModel().deleteAll();
-
+         mDb.medidaModel().deleteAll();
         List<Person> persons = mPersonDao.getAllChannels();
         assertThat(persons.size(), equalTo(0));
 
@@ -52,6 +56,18 @@ public class DatabaseTest {
 
         persons = mPersonDao.getAllChannels();
         assertThat(persons.size(), equalTo(3));
+//----------------------------------------------------------------------------------------------------------------
+        List<Medida> medida = mMedidaDao.getAllChannels();
+        assertThat(medida.size(), equalTo(0));
+
+        Medida medid = addMedida(mDb, 1, Calendar.getInstance().getTime(), 1, 1,1 ,1);
+        addMedida(mDb, 2, Calendar.getInstance().getTime(), 2, 2, 2,2);
+        addMedida(mDb, 3, Calendar.getInstance().getTime(), 3, 3, 3,3);
+
+        medida = mMedidaDao.getAllChannels();
+        assertThat(medida.size(), equalTo(3));
+
+
     }
 
     @After
@@ -66,10 +82,20 @@ public class DatabaseTest {
         person.name = name;
         person.edad = edad;
         person.foto = foto;
-        person.birthday = birthday;
         db.personModel().insertPerson(person);
         return person;
     }
-
+    private static Medida addMedida(final AppDatabase db, final long id, final Date fecha,
+                                    final int grasa, final int masa,final int peso ,final int edad) {
+        Medida medida = new Medida();
+        medida.id = id;
+        medida.fecha = fecha;
+        medida.grasa = grasa;
+        medida.masa = masa;
+        medida.peso= peso;
+        medida.edad = edad;
+        db.medidaModel().insertMedida(medida);
+        return medida;
+    }
 
 }

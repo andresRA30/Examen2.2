@@ -5,17 +5,32 @@
     <string name="name">Name</string>
     <string name="foto">foto</string>
     <string name="edad">edad</string>
+
     <string name="birthday">Birthday</string>
+    <string name="fecha">Fecha</string>
+    <string name="peso">Peso</string>
+    <string name="grasa">Grasa</string>
+    <string name="masa">Masa</string>
 
     <string name="invalid_name">Invalid Name</string>
     <string name="invalid_email">Invalid Email</string>
     <string name="invalid_birthday">Invalid Birthday</string>
     <string name="invalid_foto">Invalid Foto</string>
     <string name="invalid_edad">Invalid Edad</string>
+
+    <string name="invalid_fecha">Invalid fecha</string>
+    <string name="invalid_peso">Invalid peso</string>
+    <string name="invalid_grasa">Invalid grasa</string>
+    <string name="invalid_masa">Invalid masa</string>
+
     <string name="person">Nuevo Alumno</string>
     <string name="are_you_sure">Esta seguro en eliminar este alumno?</string>
     <string name="no_contacts">Lista de Estudiantes Vacia</string>
 
+
+    <string name="medida">Nueva Medida</string>
+    <string name="are_you_sure2">Esta seguro en eliminar esta medida?</string>
+    <string name="no_contacts2">Lista de medidas Vacia</string>
 
 
 </resources>

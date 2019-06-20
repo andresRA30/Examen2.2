@@ -47,9 +47,6 @@ public class AddPersonTest {
         ViewInteraction floatingActionButton = onView(allOf(withId(R.id.fab), isDisplayed()));
         floatingActionButton.perform(click());
 
-        ViewInteraction appCompatEditText = onView(
-                withId(R.id.nameEditText));
-        appCompatEditText.perform(scrollTo(), replaceText("Jose Lenin"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText2 = onView(
                 withId(R.id.edadEditText));
@@ -63,9 +60,7 @@ public class AddPersonTest {
                 withId(R.id.emailEditText));
         appCompatEditText4.perform(scrollTo(), replaceText("joseleninu@gmail.tech"), closeSoftKeyboard());
 
-        ViewInteraction appCompatEditText5 = onView(
-                withId(R.id.birthdayEditText));
-        appCompatEditText5.perform(scrollTo(), click());
+
 
         ViewInteraction appCompatImageButton = onView(
                 allOf(withClassName(is("android.support.v7.widget.AppCompatImageButton")), withContentDescription("Previous month"),

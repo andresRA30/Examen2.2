@@ -15,9 +15,8 @@ import com.example.contacts.R;
 import com.example.contacts.data.db.AppDatabase;
 import com.example.contacts.data.db.entity.Person;
 import com.example.contacts.edit.EditActivity;
+import com.example.contacts.edit.EditActivityMedida;
 import com.example.contacts.utils.Constants;
-
-import java.util.List;
 
 
 public class ListActivity extends AppCompatActivity implements ListContract.View, ListContract.OnItemClickListener, ListContract.DeleteListener {
@@ -33,13 +32,19 @@ public class ListActivity extends AppCompatActivity implements ListContract.View
         setContentView(R.layout.activity_list);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPresenter.addNewPerson();
             }
         });
-
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.vista3();
+            }
+        });
         mEmptyTextView = (TextView) findViewById(R.id.emptyTextView);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
@@ -58,6 +63,12 @@ public class ListActivity extends AppCompatActivity implements ListContract.View
         mPresenter.populatePeople();
     }
 
+
+    @Override
+    public void vista3(){
+        Intent intent = new Intent(this, ListActivityMedida.class);
+        startActivity(intent);
+    }
     @Override
     public void showAddPerson() {
         Intent intent = new Intent(this, EditActivity.class);
@@ -99,6 +110,7 @@ public class ListActivity extends AppCompatActivity implements ListContract.View
     @Override
     public void clickItem(Person person) {
         mPresenter.openEditScreen(person);
+
     }
 
     @Override

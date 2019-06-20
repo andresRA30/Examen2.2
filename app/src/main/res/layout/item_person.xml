@@ -22,14 +22,7 @@
             android:layout_height="36dp"
             android:src="@drawable/ic_person" />
 
-        <TextView
-            android:id="@+id/birthdayTextView"
-            android:layout_width="36dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:gravity="center"
-            android:textSize="10sp"
-            tools:text="17 February" />
+
     </LinearLayout>
 
 

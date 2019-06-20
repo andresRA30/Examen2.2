@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="filterOptions2">
+        <item></item>
+        <item>Fecha:</item>
+        <item>Grasa:</item>
+        <item>Masa:</item>
+        <item>Peso:</item>
+        <item>Edad:</item>
+    </string-array>
+</resources>

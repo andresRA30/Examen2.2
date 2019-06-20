@@ -13,6 +13,7 @@ public interface ListContract {
     interface Presenter extends BasePresenter {
 
         void addNewPerson();
+        void vista3();
 
         void result(int requestCode, int resultCode);
 
@@ -26,6 +27,10 @@ public interface ListContract {
     }
 
     interface View extends BaseView<Presenter> {
+
+
+
+        void vista3();
 
         void showAddPerson();
 

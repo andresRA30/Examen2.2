@@ -47,18 +47,12 @@ public class EditPresenter implements EditContract.Presenter {
             mView.showErrorMessage(Constants.FIELD_EMAIL);
             return false;
         }
-        if (person.birthday == null) {
-            mView.showErrorMessage(Constants.FIELD_BIRTHDAY);
-            return false;
-        }
+
 
         return true;
     }
 
-    @Override
-    public void showDateDialog() {
-        mView.openDateDialog();
-    }
+
 
     @Override
     public void getPersonAndPopulate(long id) {

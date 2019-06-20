@@ -76,24 +76,10 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/birthdayTextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/birthdayEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:focusableInTouchMode="false"
-                    android:hint="@string/birthday"
-                    android:inputType="none" />
 
-            </android.support.design.widget.TextInputLayout>
 
-        </LinearLayout>
 
-    </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -115,11 +101,14 @@
 
     <ImageView
         android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_height="125dp"
         android:src="@mipmap/ic_launcher"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="-250dp"
         android:id="@+id/imageView"/>
 
+</LinearLayout>
+
+    </ScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -21,14 +21,13 @@ import com.example.contacts.utils.Util;
 
 
 
-public class EditActivity extends AppCompatActivity implements EditContract.View, EditContract.DateListener {
+public class EditActivity extends AppCompatActivity implements EditContract.View {
 
     private EditContract.Presenter mPresenter;
 
     private EditText mNameEditText;
     private EditText mEdadEditText;
     private EditText mEmailEditText;
-    private EditText mBirthdayEditText;
     private EditText mFotoEditText;
 
     private TextInputLayout mNameTextInputLayout;
@@ -47,6 +46,7 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
+        imageView = (ImageView) findViewById(R.id.imageView);
 
         person = new Person();
         checkMode();
@@ -56,20 +56,23 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
 
         initViews();
     }
+
     public void takePicture(View view) {
         Intent imageTakeIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if(imageTakeIntent.resolveActivity(getPackageManager()) !=null) {
+        if (imageTakeIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(imageTakeIntent, REQUEST_IMAGE_CAPTUE);
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == REQUEST_IMAGE_CAPTUE && resultCode == RESULT_OK) {
+        if (requestCode == REQUEST_IMAGE_CAPTUE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             imageView.setImageBitmap(imageBitmap);
         }
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -89,21 +92,14 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
         mNameEditText = (EditText) findViewById(R.id.nameEditText);
         mEdadEditText = (EditText) findViewById(R.id.edadEditText);
         mEmailEditText = (EditText) findViewById(R.id.emailEditText);
-        mBirthdayEditText = (EditText) findViewById(R.id.birthdayEditText);
         mFotoEditText = (EditText) findViewById(R.id.fotoEditText);
 
         mNameTextInputLayout = (TextInputLayout) findViewById(R.id.nameTextInputLayout);
         mEdadInputLayout = (TextInputLayout) findViewById(R.id.edadTextInputLayout);
         mEmailInputLayout = (TextInputLayout) findViewById(R.id.emailTextInputLayout);
-        mBirthdayInputLayout = (TextInputLayout) findViewById(R.id.birthdayTextInputLayout);
         mFotoTextInputLayout = (TextInputLayout) findViewById(R.id.fotoTextInputLayout);
 
-        mBirthdayEditText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mPresenter.showDateDialog();
-            }
-        });
+
 
         mFab = (FloatingActionButton) findViewById(R.id.fab);
         mFab.setImageResource(mEditMode ? R.drawable.ic_refresh : R.drawable.ic_done);
@@ -144,8 +140,6 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
             mFotoTextInputLayout.setError(getString(R.string.invalid_foto));
         } else if (field == Constants.FIELD_edad) {
             mEdadInputLayout.setError(getString(R.string.invalid_edad));
-        } else if (field == Constants.FIELD_BIRTHDAY) {
-            mBirthdayInputLayout.setError(getString(R.string.invalid_birthday));
         }
     }
 
@@ -155,7 +149,6 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
         mEmailInputLayout.setErrorEnabled(false);
         mFotoTextInputLayout.setErrorEnabled(false);
         mEdadInputLayout.setErrorEnabled(false);
-        mBirthdayInputLayout.setErrorEnabled(false);
     }
 
     @Override
@@ -175,13 +168,7 @@ public class EditActivity extends AppCompatActivity implements EditContract.View
         mNameEditText.setText(person.name);
         mEdadEditText.setText(person.edad);
         mEmailEditText.setText(person.email);
-        mBirthdayEditText.setText(Util.format(person.birthday));
         mFotoEditText.setText(person.foto);
     }
 
-    @Override
-    public void setSelectedDate(Date date) {
-        person.birthday = date;
-        mBirthdayEditText.setText(Util.format(date));
-    }
 }

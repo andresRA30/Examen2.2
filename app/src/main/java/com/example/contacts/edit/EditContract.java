@@ -15,7 +15,7 @@ public interface EditContract {
 
         boolean validate(Person person);
 
-        void showDateDialog();
+
 
         void getPersonAndPopulate(long id);
 
@@ -35,9 +35,5 @@ public interface EditContract {
         void populate(Person person);
     }
 
-    interface DateListener {
 
-        void setSelectedDate(Date date);
-
-    }
 }

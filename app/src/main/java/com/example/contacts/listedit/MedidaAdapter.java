@@ -6,39 +6,38 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.example.contacts.R;
-import com.example.contacts.data.db.entity.Person;
+import com.example.contacts.data.db.entity.Medida;
 import com.example.contacts.utils.Util;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
-public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder> {
+public class MedidaAdapter extends RecyclerView.Adapter<MedidaAdapter.ViewHolder> {
 
-    private List<Person> mValues;
-    private ListContract.OnItemClickListener mOnItemClickListener;
+    private List<Medida> mValues;
+    private ListContractMedida.OnItemClickListener mOnItemClickListener;
 
-    public PeopleAdapter(ListContract.OnItemClickListener onItemClickListener) {
+    public MedidaAdapter(ListContractMedida.OnItemClickListener onItemClickListener) {
         mValues = new ArrayList<>();
         mOnItemClickListener = onItemClickListener;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_person, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_historial, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.nameTextView.setText(mValues.get(position).name);
-        holder.fotoTextView.setText(mValues.get(position).foto);
-        holder.edadTextView.setText(holder.mItem.edad);
-        holder.emailTextView.setText(holder.mItem.email);
+        holder.fechaTextView.setText(Util.formatMin(mValues.get(position).fecha));
+        holder.grasaTextView.setText(mValues.get(position).grasa);
+        holder.pesoTextView.setText(mValues.get(position).peso);
+        holder.masaTextView.setText(mValues.get(position).masa);
+        holder.edadTextView.setText(mValues.get(position).edad);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,26 +60,28 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
         return mValues.size();
     }
 
-    public void setValues(List<Person> values) {
+    public void setValues(List<Medida> values) {
         mValues = values;
         notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView nameTextView;
-        public final TextView fotoTextView;
-        public final TextView emailTextView;
+        public final TextView fechaTextView;
+        public final TextView grasaTextView;
+        public final TextView pesoTextView;
+        public final TextView masaTextView;
         public final TextView edadTextView;
-        public Person mItem;
+        public Medida mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            nameTextView = (TextView) view.findViewById(R.id.nameTextView);
-            fotoTextView = (TextView) view.findViewById(R.id.fotoTextView);
-            emailTextView = (TextView) view.findViewById(R.id.emailTextView);
-            edadTextView = (TextView) view.findViewById(R.id.edadTextView);
+            fechaTextView = (TextView) view.findViewById(R.id.fecha);
+            grasaTextView = (TextView) view.findViewById(R.id.grasa);
+            pesoTextView = (TextView) view.findViewById(R.id.peso);
+            masaTextView = (TextView) view.findViewById(R.id.masa);
+            edadTextView = (TextView) view.findViewById(R.id.edad);
         }
     }
 

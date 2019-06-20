@@ -10,12 +10,14 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 
+import com.example.contacts.LlamarVista;
 import com.example.contacts.R;
 import com.example.contacts.utils.Constants;
 
 public class DeleteConfirmFragment extends DialogFragment {
 
     private ListContract.DeleteListener mListener;
+
 
     @NonNull
     @Override
@@ -32,10 +34,12 @@ public class DeleteConfirmFragment extends DialogFragment {
         });
 
 
-        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("VISTA HISTORIAL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                mListener.setConfirm(false, personId);
+                // mListener.setConfirm(false, personId);
+                LlamarVista l = new LlamarVista();
+                l.Siguiente();
             }
         });
 

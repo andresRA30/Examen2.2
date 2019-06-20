@@ -13,7 +13,8 @@ import java.util.Calendar;
 
 public class DateDialogFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
-    private EditContract.DateListener mListener;
+    private EditContractMedida.DateListener mListener;
+
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -29,12 +30,14 @@ public class DateDialogFragment extends DialogFragment implements DatePickerDial
         c.set(Calendar.YEAR, year);
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, day);
-        mListener.setSelectedDate(c.getTime());
+        mListener.setSelectedDateMedida(c.getTime());
+
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mListener = (EditContract.DateListener) context;
+        mListener = (EditContractMedida.DateListener) context;
+
     }
 }

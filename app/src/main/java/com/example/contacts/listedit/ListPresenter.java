@@ -31,6 +31,12 @@ public class ListPresenter implements ListContract.Presenter {
     }
 
     @Override
+    public void vista3() {
+        mView.vista3();
+    }
+
+
+    @Override
     public void result(int requestCode, int resultCode) {
 
     }

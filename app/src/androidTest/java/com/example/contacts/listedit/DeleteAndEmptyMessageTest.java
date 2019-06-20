@@ -68,9 +68,7 @@ public class DeleteAndEmptyMessageTest {
                 withId(R.id.emailEditText));
         appCompatEditText4.perform(scrollTo(), replaceText("joseleninu@gmail.tech"), closeSoftKeyboard());
 
-        ViewInteraction appCompatEditText5 = onView(
-                withId(R.id.birthdayEditText));
-        appCompatEditText5.perform(scrollTo(), click());
+
 
         ViewInteraction appCompatImageButton = onView(
                 allOf(withClassName(is("android.support.v7.widget.AppCompatImageButton")), withContentDescription("Previous month"),
